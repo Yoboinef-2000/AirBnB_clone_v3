@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+Provide RESTful API actions for Review objects.
+Review objects may rest now.
+"""
+
 from flask import jsonify, abort, request
 from models.state import State
 from models.city import City

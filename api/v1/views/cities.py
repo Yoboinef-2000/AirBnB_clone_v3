@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+Provide RESTful API actions for City objects.
+City objects may rest now.
+"""
+
 from flask import jsonify, abort, request
 from models.state import State
 from models.city import City

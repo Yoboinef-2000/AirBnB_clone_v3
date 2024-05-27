@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+Provide RESTful API actions for State objects.
+State objects may rest now.
+"""
+
 from flask import jsonify, abort, request
 from models.state import State
 from api.v1.views import app_views
