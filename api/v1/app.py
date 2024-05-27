@@ -21,7 +21,7 @@ def weNotHereBabyWeOut(error):
 
 
 if __name__ == "__main__":
-    # host = getenv('HBNB_API_HOST', '0.0.0.0')
+    host = getenv('HBNB_API_HOST', '0.0.0.0')
     # Just for Clarificcation,
     # host will try to retrieve the env variabble
     # named HBNB_API_HOST, but if that env var is not
@@ -33,6 +33,5 @@ if __name__ == "__main__":
     # Ask your self this:
     # A hundred shots, a hundred shots, how you miss a whole 100 shots?
     # Lol
-    # port = int(getenv('HBNB_API_PORT', 5000))
-    app.run(debug=True, threaded=True)
-    # host=host, port=port,
+    port = int(getenv('HBNB_API_PORT', 5000))
+    app.run(host=host, port=port, debug=True, threaded=True)
