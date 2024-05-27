@@ -67,6 +67,41 @@ test_file_storage.py'])
             self.assertTrue(len(func[1].__doc__) >= 1,
                             "{:s} method needs a docstring".format(func[0]))
 
+    def test_get(self):
+        """Test the get method"""
+        state = State(name="CaliBaby")
+        models.storage.new(state)
+        models.storage.save()
+        theStateWeHave = models.storage.get(State, state.id)
+
+        self.assertEqual(theStateWeHave, state)
+
+    def test_count(self):
+        """Test the count method"""
+        theInitialCount = models.storage.count()
+
+        firstState = State(name="Asmara")
+        models.storage.new(firstState)
+
+        secondState = State(name="Keren")
+        models.storage.new(secondState)
+
+        thirdState = State(name="Barentu")
+        models.storage.new(thirdState)
+
+        fourthState = State(name="Baxe")
+        models.storage.new(fourthState)
+
+        fifthState = State(name="Mendefera")
+        models.storage.new(fifthState)
+
+        sixthState = State(name="Assab")
+        models.storage.new(sixthState)
+
+        models.storage.save()
+
+        self.assertEqual(models.storage.count(), theInitialCount + 6)
+
 
 class TestFileStorage(unittest.TestCase):
     """Test the FileStorage class"""
